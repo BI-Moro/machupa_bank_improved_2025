@@ -67,8 +67,8 @@ def random_tin():
 
 
 def format_date(day, month, year):
-    """Format date as DD/MM/YYYY"""
-    return f"{day:02d}/{month:02d}/{year}"
+    """Format date as YYYY-MM-DD for Doris date columns."""
+    return f"{year}-{month:02d}-{day:02d}"
 
 
 def generate_reference_number(prefix, sequence):

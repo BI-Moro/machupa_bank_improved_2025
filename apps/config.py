@@ -2,8 +2,16 @@
 import os
 
 # Paths
-OUTPUT_DIR = "/opt/bitnami/spark/output"
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "/opt/bitnami/spark/output")
 DELIMITER = ","
+
+# Doris
+DORIS_HOST = os.getenv("DORIS_HOST", "192.168.201.12")
+DORIS_PORT = int(os.getenv("DORIS_PORT", "9030"))
+DORIS_HTTP_PORT = int(os.getenv("DORIS_HTTP_PORT", "8030"))
+DORIS_DATABASE = os.getenv("DORIS_DATABASE", "maduro_one_one")
+DORIS_USER = os.getenv("DORIS_USER", "root")
+DORIS_PASSWORD = os.getenv("DORIS_PASSWORD", "")
 
 # Context
 CURRENCY_ID = "852"  # TZS
@@ -17,6 +25,8 @@ NUM_CUSTOMERS = 500_000
 NUM_ACTIVE_CUSTOMERS = 350_000  # 70% active
 START_YEAR = 2018
 CURRENT_YEAR = 2025
+GENERATION_DAYS = int(os.getenv("GENERATION_DAYS", "4"))
+GENERATION_END_DATE = os.getenv("GENERATION_END_DATE", "")  # Optional YYYY-MM-DD
 
 # Branches (Major TCB branches across Tanzania)
 BRANCHES = [
